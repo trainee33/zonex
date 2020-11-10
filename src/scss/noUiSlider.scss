@@ -1,0 +1,73 @@
+.noUi-base,
+.noUi-connects {
+	width: 100%;
+	height: 4px;
+	position: relative;
+	z-index: 1;
+	box-sizing: border-box;
+	background-color: #dfdfdf;
+}
+.noUi-connects {
+	overflow: hidden;
+	z-index: 0;
+}
+.noUi-connect {
+	width: 100%;
+	height: 100%;
+	background-color: #fc9a00;
+}
+.noUi-origin {
+	height: 10px;
+	width: 10%;
+}
+.noUi-origin,
+.noUi-connect {
+	will-change: transform;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	transform-origin: 0 0;
+	transform-style: flat;
+}
+.noUi-horizontal .noUi-origin {
+	height: 0px;
+}
+.noUi-target {
+	box-sizing: border-box;
+	user-select: none;
+	margin-right: 10px;
+}
+.noUi-horizontal .noUi-handle {
+	top: -6px;
+	right: -13px;
+}
+.noUi-handle-upper {
+	right: 0px;
+}
+.noUi-handle {
+	position: absolute;
+	outline: none;
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	background-color: #fc9a00;
+	outline: 1px solid #fff;
+	outline-offset: -2px;
+}
+.noUi-tooltip {
+	position: absolute;
+	width: 240px;
+	text-align: center;
+	bottom: -45px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	width: 68px;
+	height: 30px;
+	background-color: #ffffff;
+	border: 1px solid #dfdfdf;
+	font-size: 16px;
+	line-height: 31px;
+	font-weight: 400;
+	color: #7c7373;
+}

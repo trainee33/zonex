@@ -1,0 +1,13 @@
+import './files/webp';
+import './files/ibg';
+import './files/swiper';
+import './libs/simplebar';
+import './files/advertising';
+import './files/catalog';
+import './files/catalog_filters';
+import './files/catalog_sort';
+import './files/filter_color';
+import './files/filter_size';
+import './files/steppers';
+import './files/slider_product';
+import './files/product_text';

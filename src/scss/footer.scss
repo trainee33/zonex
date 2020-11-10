@@ -1,0 +1,158 @@
+.footer-content__home {
+	padding: 0 280px;
+	// .footer-content__top
+	&__top {
+	}
+	// .footer-content__bottom
+	&__bottom {
+	}
+}
+.top-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 100px;
+	// .top-footer__column
+	&__column {
+	}
+
+	// .top-footer__title
+	&__title {
+		font-size: 16px;
+		line-height: 1.2;
+		font-weight: 700;
+		text-transform: uppercase;
+		margin-bottom: 37px;
+	}
+
+	// .top-footer__list
+	&__list {
+		// .top-footer__list_item
+		&_item {
+			&:not(:last-child) {
+				margin-bottom: 18px;
+			}
+		}
+	}
+
+	// .top-footer__link
+	&__link {
+		font-size: 13px;
+		line-height: 1.2;
+		font-weight: 500;
+		color: #454545;
+	}
+
+	// .top-footer__text
+	&__text {
+		font-size: 13px;
+		line-height: 1.2;
+		font-weight: 500;
+		color: #454545;
+	}
+}
+.footer-form {
+	width: 650px;
+	margin-bottom: 20px;
+}
+.subscribe-form {
+	position: relative;
+	// .subscribe-form__title
+	&__title {
+		font-size: 13px;
+		line-height: 1.2;
+		font-weight: 500;
+		color: #454545;
+		margin-bottom: 35px;
+	}
+
+	// .subscribe-form__field
+	&__field {
+		display: block;
+		width: 100%;
+		padding-bottom: 10px;
+		border-bottom: 2px solid #000;
+		input {
+			border: none;
+			width: 85%;
+			font-size: 13px;
+			line-height: 1.2;
+			font-weight: 500;
+			padding-left: 10px;
+			padding-right: 85px;
+			&::placeholder {
+				opacity: 0.5;
+			}
+		}
+	}
+
+	// .subscribe-form__btn
+	&__btn {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		margin: 13px;
+		font-size: 13px;
+		line-height: 1.2;
+		font-weight: 500;
+		color: #454545;
+	}
+}
+.footer-bottom {
+	display: flex;
+	justify-content: space-between;
+	padding: 40px 0;
+	// .footer-bottom__left
+	&__left {
+	}
+
+	// .footer-bottom__list
+	&__list {
+		display: flex;
+	}
+
+	// .footer-bottom__item
+	&__item {
+		&:not(:last-child) {
+			margin-right: 45px;
+		}
+	}
+
+	// .footer-bottom__link
+	&__link {
+		font-size: 13px;
+		line-height: 1.2;
+		font-weight: 700;
+	}
+
+	// .footer-bottom__right
+	&__right {
+	}
+}
+.social {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.social-item {
+	&:not(:last-child) {
+		margin-right: 30px;
+	}
+}
+.social-link {
+	display: block;
+	width: 16px;
+	height: 16px;
+	&__tw {
+		background: url('../img/page/twitter.png') center no-repeat;
+	}
+	&__fb {
+		background: url('../img/page/facebook.png') center no-repeat;
+	}
+	&__ins {
+		background: url('../img/page/ins.png') center no-repeat;
+	}
+	&__pic {
+		background: url('../img/page/pin.png') center no-repeat;
+	}
+}
