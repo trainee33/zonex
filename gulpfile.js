@@ -35,7 +35,8 @@ let path = {
 		js: project_name + '/js/',
 		css: project_name + '/css/',
 		images: project_name + '/img/',
-		fonts: project_name + '/fonts/'
+      fonts: project_name + '/fonts/',
+      resources: project_name + '/resources/',
 	},
 	src: {
 		favicon: src_folder + '/img/favicon.{jpg,png,svg,gif,ico,webp}',
@@ -44,7 +45,8 @@ let path = {
 		css: src_folder + '/scss/style.scss',
       images: [ src_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}', '!**/favicon.*', '!**/svg/*.svg' ],
       svgSprites: [ src_folder + '/img/svg/*.svg' ],
-		fonts: src_folder + '/fonts/*.ttf'
+      fonts: src_folder + '/fonts/*.ttf',
+      resources: src_folder + '/resources/**',
 	},
 	watch: {
 		html: src_folder + '/**/*.html',
@@ -52,6 +54,7 @@ let path = {
 		css: src_folder + '/scss/**/*.scss',
       images: src_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
       svgSprites: [ src_folder + '/img/svg/*.svg' ],
+      resources: src_folder + '/resources/**',
 	},
 	clean: './' + project_name + '/'
 };
@@ -91,6 +94,11 @@ const settings = {
 };
 
 smartgrid('./#src/scss', settings);
+
+function resources() {
+   return src(path.src.resources, {})
+     .pipe(dest(path.build.resources));
+}
 
 function html() {
 	return src(path.src.html, {})
@@ -263,11 +271,12 @@ function watchFiles() {
 	gulp.watch([ path.watch.js ], js);
    gulp.watch([ path.watch.images ], images);
    gulp.watch('./src/img/svg/**.svg', svgSprites);
+   gulp.watch([ path.watch.resources ], resources);
 }
 let build = gulp.series(
 	clean,
 	fonts_otf,
-	gulp.parallel(html, css, js, favicon, images, svgSprites),
+	gulp.parallel(html, css, js, favicon, images, svgSprites, resources),
    fonts,      
 	gulp.parallel(fontstyle)
 );
@@ -282,6 +291,7 @@ exports.fontstyle = fontstyle;
 exports.fonts = fonts;
 exports.images = images;
 exports.svgSprites = svgSprites;
+exports.resources = resources;
 exports.clean = clean;
 exports.build = build;
 exports.watch = watch;

@@ -17,30 +17,36 @@ let stepperPlus = document.querySelector('.stepper__btn_plus');
       stepperPlus.classList.('stepper__btn_disabled');
    }
 });*/
-stepperMin.addEventListener("click", () => {
-   let currentValue = parseInt(stepperInput.value);
-   currentValue --;
-   stepperInput.value = currentValue;
-   stepperPlus.classList.remove('stepper__btn_disabled');
-   
-   if (stepperInput.value <= 1) {
-      stepperInput.value = 1;
-      stepperMin.classList.add('stepper__btn_disabled');
-   } else {
-      stepperMin.classList.remove('stepper__btn_disabled');
-   }
-});
-stepperPlus.addEventListener("click", () => {
-   let currentValue = parseInt(stepperInput.value);
-   currentValue ++;
-   stepperInput.value = currentValue;
-   stepperMin.classList.remove('stepper__btn_disabled');
-
-   if (stepperInput.value > 99998) {
-      stepperInput.value = 99999;
-      stepperPlus.classList.add('stepper__btn_disabled');
-   } else {
+if(stepperMin){
+   stepperMin.addEventListener("click", () => {
+      let currentValue = parseInt(stepperInput.value);
+      currentValue --;
+      stepperInput.value = currentValue;
       stepperPlus.classList.remove('stepper__btn_disabled');
-   }
+      
+      if (stepperInput.value <= 1) {
+         stepperInput.value = 1;
+         stepperMin.classList.add('stepper__btn_disabled');
+      } else {
+         stepperMin.classList.remove('stepper__btn_disabled');
+      }
+   });
+}
 
-});
+if(stepperPlus){
+   stepperPlus.addEventListener("click", () => {
+      let currentValue = parseInt(stepperInput.value);
+      currentValue ++;
+      stepperInput.value = currentValue;
+      stepperMin.classList.remove('stepper__btn_disabled');
+   
+      if (stepperInput.value > 99998) {
+         stepperInput.value = 99999;
+         stepperPlus.classList.add('stepper__btn_disabled');
+      } else {
+         stepperPlus.classList.remove('stepper__btn_disabled');
+      }
+   
+   });
+}
+

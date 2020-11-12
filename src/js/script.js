@@ -11,3 +11,4 @@ import './files/filter_size';
 import './files/steppers';
 import './files/slider_product';
 import './files/product_text';
+import './files/products';
