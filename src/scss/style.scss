@@ -30,6 +30,7 @@ body {
 	font-size: 14px;
 	font-family: 'Jost';
 	background-color: #fff;
+	overflow-anchor: none;
 }
 a {
 	outline: none;
@@ -392,6 +393,15 @@ body.ie {
 		svg {
 			width: 12px;
 			height: 21px;
+			transition: all 0.3s ease 0s;
+		}
+		&:hover {
+			span {
+				color: #151515;
+			}
+			svg {
+				transform: translateY(5px);
+			}
 		}
 	}
 }
@@ -408,6 +418,7 @@ body.ie {
 	position: relative;
 	&__sale {
 		position: absolute;
+		z-index: 20;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -425,6 +436,16 @@ body.ie {
 	// .product__img
 	&__img {
 		margin-bottom: 25px;
+		overflow: hidden;
+		img {
+			transition: all 0.3s ease 0s;
+		}
+
+		&:hover {
+			img {
+				transform: scale(1.1);
+			}
+		}
 	}
 	// .product__props
 	&__prop {

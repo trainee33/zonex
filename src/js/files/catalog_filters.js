@@ -50,6 +50,13 @@ if (filterItem) {
 
             document.querySelector(`[data-text="${text}"]`).style.display = 'none';
          }
+
+         let checkedQuantity = el.closest('.filter-item').querySelector('.filter-header__quantity');
+
+         let checkedQuantityLength = el.closest('.filter-item__body').querySelectorAll('.checkbox-active').length;
+
+         checkedQuantity.textContent = checkedQuantityLength;
+
          let activeCheckBoxes = document.querySelector('.checkbox-active');
          if (activeCheckBoxes) {
             categorySort.style.display = 'block';
@@ -84,9 +91,9 @@ if (categorySort) {
                let checkboxValues = document.querySelectorAll('.item-checkbox');
                for (let i = 0; i < checkboxValues.length; i++) {
                      let checkboxItem = checkboxValues[i];
-                     checkboxItem.checked = false;
-                  
+                     checkboxItem.checked = false;                  
                }
+               document.querySelectorAll('.filter-header__quantity').forEach(el => el.textContent = 0);
             }
          });
          e.currentTarget.style.display = 'none';     

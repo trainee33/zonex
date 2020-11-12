@@ -361,6 +361,7 @@ body {
   font-size: 14px;
   font-family: 'Jost';
   background-color: #fff;
+  overflow-anchor: none;
 }
 
 a {
@@ -2656,6 +2657,19 @@ input[type=checkbox]:checked + .label:before {
 .main-products__more svg {
   width: 12px;
   height: 21px;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.main-products__more:hover span {
+  color: #151515;
+}
+
+.main-products__more:hover svg {
+  -webkit-transform: translateY(5px);
+      -ms-transform: translateY(5px);
+          transform: translateY(5px);
 }
 
 .product-grid__item {
@@ -2674,6 +2688,7 @@ input[type=checkbox]:checked + .label:before {
 
 .product__sale {
   position: absolute;
+  z-index: 20;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2697,6 +2712,19 @@ input[type=checkbox]:checked + .label:before {
 
 .product__img {
   margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.product__img img {
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.product__img:hover img {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .product__prop {
